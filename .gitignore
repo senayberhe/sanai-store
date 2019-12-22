@@ -13,3 +13,5 @@ media
 /.vscode
 Pipfile.lock
 static
+media_root
+senaistore/settings.py

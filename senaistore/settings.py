@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'core'
     'crispy_forms',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -52,16 +53,16 @@ TEMPLATES = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 DATABASES = {
     "default": {
@@ -78,6 +79,13 @@ AUTHENTICATION_BACKENDS = (
 
 
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+
+
+# CRISPY FORMS
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 if ENVIRONMENT == 'production':
     DEBUG = False
